@@ -1,0 +1,32 @@
+=search_form_for @q do |f|
+
+table[border="1" bordercolor="grey"]
+  tbody
+    tr
+      th 
+        = sort_link(@q, :nominal_current,"Nominal current", default_order: :asc)
+      th
+        = sort_link(@q, :phases, "Phases", default_order: :asc)
+      th
+        = sort_link(@q, :characteristic,"Characteristic", default_order: :asc)
+      th
+        = sort_link(@q, :article_number, "Article number", default_order: :asc)
+      th
+        = sort_link(@q, :manufacturer, default_order: :asc)
+      th
+        | Show item 
+
+  -@automatic_breakers.each do |i|
+    tr
+      td 
+        =i.nominal_current
+      td 
+        =i.phases
+      td
+        =i.characteristic
+      td
+        =i.article_number
+      td
+        =i.manufacturer
+      td
+        = link_to 'continue', automatic_breaker_path(i) 

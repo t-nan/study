@@ -1,0 +1,27 @@
+
+  =search_form_for @q do |f|
+    =f.search_field :nominal_current_eq,placeholder: 'Nominal current'
+    =f.search_field :phases_eq,placeholder: 'Phases'
+    =f.search_field :characteristic_eq,placeholder: 'Characteristic'
+    =f.search_field :manufacturer_eq,placeholder: 'Manufacturer'
+    =f.submit
+    br
+    = f.label "not expensive"
+    = f.check_box :active, {}, "true", nil
+
+  =render partial: 'automatic_breakers/list', locals: { automatic_breaker: @automatic_breaker }
+
+ 
+
+
+ 
+
+
+
+
+
+
+      			
+    
+      
+  

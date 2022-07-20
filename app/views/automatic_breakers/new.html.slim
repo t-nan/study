@@ -1,0 +1,7 @@
+= simple_form_for @automatic_breaker do |f|
+  = f.input :phases,label: 'Phases',placeholder: 'phases',as: :radio_buttons, collection: [['1', '1P'], ['1', '2P'],['3', '3P']], label_method: :second, value_method: :first
+  = f.input :nominal_current,collection: [6,10,16,20,25,32,40,63,80], prompt: "Select nominal current"
+  = f.input :characteristic,as: :radio_buttons,collection: 'B'..'D'
+  = f.input :breaking_capacity,as: :radio_buttons,collection: [4.5,6], prompt: "breaking_capacity"
+  = f.input :manufacturer,collection: ['IEK','EKF','ABB','KEAZ','Schneider Electric','DEKraft'], prompt: "Select manufacturer"
+  = f.button :submit
